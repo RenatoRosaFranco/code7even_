@@ -1,0 +1,2 @@
+module Dashboard::ServicesHelper
+end
