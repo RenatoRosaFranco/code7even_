@@ -6,12 +6,14 @@ class Newsletter < ApplicationRecord
   def subscrible
   	self.status = true 
   	self.token  = SecureRandom.urlsafe_base64
+  	self.subscription_date = Date.today
   	self.save!
   end
 
   def unsubscrible
   	self.status = false
   	self.token = ''
+  	self.subscription_date = nil
   	self.save!
   end
 
@@ -26,4 +28,7 @@ class Newsletter < ApplicationRecord
   					uniqueness: true,
   					allow_blank: false,
   					length: { minimum: 3, maximum: 145 }
+
+  validates :token,
+  					uniqueness: true
 end
