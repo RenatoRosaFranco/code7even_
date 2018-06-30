@@ -1,6 +1,6 @@
 module Dashboard
 	class CategoriesController < HomeController
-		before_action :set_category, only [:show, :edit, :update, :destroy]
+		before_action :set_category, only: [:show, :edit, :update, :destroy]
 		respond_to :html, :json, :js
 
 		def index
@@ -26,7 +26,7 @@ module Dashboard
 			@category.update(category_params)
 			respond_with(:dashboard, @category)
 		end
-
+		
 		def destroy
 			@category.destroy
 			respond_with(:dashboard, @category)

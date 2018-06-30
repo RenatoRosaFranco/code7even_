@@ -4,7 +4,7 @@ module Dashboard
 		respond_to :html, :json, :js
 
 		def index
-			@user = Users.all 
+			@user = User.all 
 		end
 
 		def new
