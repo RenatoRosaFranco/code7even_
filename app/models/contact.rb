@@ -1,5 +1,5 @@
 # string:sanatizer
-class Contact < ApplicationRecord
+class Contact < Object
 	include ActiveModel::Conversion
 	include ActiveModel::Validations
 
