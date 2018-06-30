@@ -1,6 +1,5 @@
 # string:sanatizer
 class Newsletter < ApplicationRecord
- 	
  	after_create :subscrible
 
   def subscrible

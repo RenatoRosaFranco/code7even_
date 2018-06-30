@@ -1,6 +1,7 @@
 # string:sanatizer
 class Post < ApplicationRecord
 	enum status: [:published, :unpublished]
+	belongs_to :category
 
 	validates :title,
 						presence: true,
