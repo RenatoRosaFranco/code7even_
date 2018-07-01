@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   	resources :categories
   	resources :newsletters
   	resources :posts 
+    namespace :blog do
+      resources :posts
+    end
   	resources :services
   	resources :users
   end
