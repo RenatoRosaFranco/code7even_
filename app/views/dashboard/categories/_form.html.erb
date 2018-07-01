@@ -1,0 +1,37 @@
+<%= form_for([:dashboard, @category]) do |f| %>
+	
+	<%= has_errors?(@category) %>
+
+	<div class="field">
+		<%= f.label :name %>
+		<div class="input-group">
+			<div class="input-group-addon"><i class="glyphicon glyphicon-search"></i></div>
+		<%= f.text_field :name, class: 'form-control', required: 'required',
+		placeholder: 'Digite o nome', autocomplete: 'off' %>
+		</div>
+	</div>
+	<div class="field">
+		<%= f.label :description %>
+		<%= f.text_area :description, class: 'form-control', required: 'required',
+		placeholder: 'Digite a descrição', autocomplete: 'off' %>
+	</div>
+	<div class="field">
+		<%= f.label :category %>
+		<div class="input-group">
+			<div class="input-group-addon"><i class="glyphicon glyphicon-searcj"></i></div>
+		<%= f.collection_select(:category, Category.all, :id, :name,
+		{prompt: 'Selecione uma Categoria Pai'}, {class: 'form-control'}) %>
+		</div>
+	</div>
+	<div class="field">
+		<%= f.label :tags %>
+		<div class="input-group">
+			<div class="input-group-addon"><i class="glyphicon glyphicon-search"></i></div>
+		<%= f.text_field :tags, class: 'form-control', required: 'required',
+		placeholder: 'Digite as tags', autocomplete: 'off' %>
+		</div>
+	</div>
+	<div class="field">
+		<%= f.submit nil, class: 'btn btn-primary btn-lg top' %>
+	</div>
+<% end %>

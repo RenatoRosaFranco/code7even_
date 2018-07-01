@@ -7,6 +7,10 @@ module Dashboard
 			@services = Service.all
 		end
 
+		def new
+			@service = Service.new
+		end	
+
 		def show
 		end
 

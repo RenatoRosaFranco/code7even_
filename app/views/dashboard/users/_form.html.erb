@@ -1,0 +1,32 @@
+<%= form_for([:dashboard, @user]) do |f| %>
+
+	<%= has_errors?(@user) %>
+
+	<div class="field">
+		<%= f.label :email %>
+		<div class="input-group">
+			<div class="input-group-addon"><i class="glyphicon glyphicon-search"></i></div>
+		<%= f.text_field :email, class: 'form-control', required: 'required',
+		placeholder: 'Digite o nome', autocomplete: 'off' %>
+		</div>
+	</div>
+	<div class="field">
+		<%= f.label :password %>
+		<div class="input-group">
+			<div class="input-group-addon"><i class="glyphicon glyphicon-search"></i></div>
+		<%= f.password_field :password, class: 'form-control', required: 'required',
+		placeholder: 'Digite a senha', autocomplete: 'off' %>
+		</div>
+	</div>
+	<div class="field">
+		<%= f.label :password_confirmation %>
+		<div class="input-group">
+			<div class="input-group-addon"><i class="glyphicon glyphicon-search"></i></div>
+		<%= f.password_field :password, class: 'form-control', required: 'required',
+		placeholder: 'Digite a senha', autocomplete: 'off' %>
+		</div>
+	</div>
+	<div class="field">
+		<%= f.submit nil, class: 'btn btn-primary btn-lg top' %>
+	</div>
+<% end %>

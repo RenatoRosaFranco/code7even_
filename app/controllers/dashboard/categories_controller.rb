@@ -15,7 +15,7 @@ module Dashboard
 		end
 
 		def create
-			@category = Category.new(category_params)
+			@category = Category.create(category_params)
 			respond_with(:dashboard, @category)
 		end
 
@@ -26,7 +26,7 @@ module Dashboard
 			@category.update(category_params)
 			respond_with(:dashboard, @category)
 		end
-		
+
 		def destroy
 			@category.destroy
 			respond_with(:dashboard, @category)
