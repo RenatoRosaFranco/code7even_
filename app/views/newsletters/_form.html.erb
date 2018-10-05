@@ -1,0 +1,26 @@
+<%= form_for(newsletter) do |f| %>
+
+	<%= has_errors?(newsletter) %>
+
+	<div class="col-md-4">
+		<div class="field">
+			<%= f.label :name %>
+			<%= f.text_field :name, class: 'form-control', required: 'required',
+			placeholder: 'Digite o nome', autocomplete: 'off' %>
+		</div>
+	</div>
+	
+	<div class="col-md-4">
+		<div class="field">
+			<%= f.label :email %>
+			<%= f.text_field :email, class: 'form-control', required: 'required',
+			placeholder: 'Digite o e-mail', autocomplete: 'off' %>
+		</div>
+	</div>
+
+	<div class="col-md-4">
+		<div class='actions'>
+			<%= f.submit 'Inscreva-me', class: 'btn btn-primary btn-lg top' %>
+		</div>
+	</div>
+<% end %>

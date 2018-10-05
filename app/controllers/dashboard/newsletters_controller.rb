@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module Dashboard
 	class NewslettersController < HomeController
 		before_action :set_newsletter, only: [:show, :edit, :update, :destroy]

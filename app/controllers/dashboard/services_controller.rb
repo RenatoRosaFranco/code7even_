@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module Dashboard
 	class ServicesController < HomeController
 		before_action :set_service, only: [:show, :edit, :update, :destroy]

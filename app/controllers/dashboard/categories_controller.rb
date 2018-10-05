@@ -1,3 +1,4 @@
+# frozen_string_literal: trues
 module Dashboard
 	class CategoriesController < HomeController
 		before_action :set_category, only: [:show, :edit, :update, :destroy]

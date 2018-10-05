@@ -1,5 +1,15 @@
-# string:sanatizer
+# frozen_string_literal: true
 class Post < ApplicationRecord
+	extend FriendlyId
+	friendly_id :title, use: :slugged
+
+	self.table_name  = 'posts'
+	self.primary_key = 'id'
+
+	scope :title,        -> (title) { where(title: title) }
+  scope :lasts,        -> { order(created_at: :asc)     }
+  scope :recents,      -> { order(created_at: :desc)    }
+
 	enum status: [:published, :unpublished]
 	belongs_to :category
 

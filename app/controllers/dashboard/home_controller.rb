@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module Dashboard
 	class HomeController < ApplicationController
 	  
@@ -5,7 +6,7 @@ module Dashboard
 	  before_action :authenticate_user!
 
 	  def index	
-	  	# some code here
+	  	render 'index'
 	  end
 	end
 end

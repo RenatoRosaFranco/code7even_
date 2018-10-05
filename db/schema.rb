@@ -12,18 +12,18 @@
 
 ActiveRecord::Schema.define(version: 2018_06_30_223331) do
 
-  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "categories", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.string "slug"
     t.string "tags"
-    t.bigint "category_id"
+    t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_categories_on_category_id"
   end
 
-  create_table "newsletters", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "newsletters", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.boolean "status"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2018_06_30_223331) do
     t.index ["email"], name: "index_newsletters_on_email", unique: true
   end
 
-  create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "description"
     t.text "content"
@@ -43,11 +43,11 @@ ActiveRecord::Schema.define(version: 2018_06_30_223331) do
     t.string "tags"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "category_id"
+    t.integer "category_id"
     t.index ["category_id"], name: "index_posts_on_category_id"
   end
 
-  create_table "services", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "services", force: :cascade do |t|
     t.string "name"
     t.string "description"
     t.string "slug"
@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 2018_06_30_223331) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -73,6 +73,4 @@ ActiveRecord::Schema.define(version: 2018_06_30_223331) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "categories", "categories"
-  add_foreign_key "posts", "categories"
 end

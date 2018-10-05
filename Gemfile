@@ -57,6 +57,8 @@ group :development, :test do
   gem 'brakeman'
   gem 'bullet'
   gem 'devise'
+  gem 'friendly_id'
+  gem 'sqlite3'
 end
 
 group :development do

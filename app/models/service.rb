@@ -1,5 +1,14 @@
-# string:sanatizer
+# frozen_string_literal: true
 class Service < ApplicationRecord
+	extend FriendlyId
+	friendly_id :name, use: :slugged
+
+	self.table_name  = 'services'
+	self.primary_key = 'id'
+
+  scope :by_name,      -> (name) { where(name: name)  }
+  scope :lasts,        -> { order(created_at: :asc)   }
+  scope :recents,      -> { order(created_at: :desc)  }
 
 	validates :name,
 						presence: true,

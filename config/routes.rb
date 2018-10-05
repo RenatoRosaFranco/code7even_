@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   namespace :blog do 
   	resources :posts, only: [:index, :show]
   end
-  resource :newsletter, only: [:create, :destroy]
+  resource :newsletters, only: [:create, :destroy]
   resource :contacts, only: [:create]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

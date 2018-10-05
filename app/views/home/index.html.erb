@@ -43,6 +43,22 @@
 	</div>
 </section>
 
+<section id="newsletter">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<ul class="list-unstyled text-center">
+					<li><h2>Subscrible to our newsletter</h2></li>
+					<li><p>Cursus, enim a ultrices venenatis, ante magna varius.</p></li>
+					<li><hr></li>
+				</ul>
+
+				<%= render partial: 'newsletters/form',locals: { newsletter: @newsletter } %>
+			</div>
+		</div>
+	</div>
+</section>
+
 <section id='contact'>
 	<div class="container">
 		<div class="row">
@@ -51,9 +67,74 @@
 					<li><h1>CONTATO</h1></li>
 					<li><hr></li>
 				</ul>
+			
+			  <div class='col-md-7' id="contactForm">
+			 	  <%= render partial: 'contact/form', 
+			 	  	locals: { contact: @contact } %>
+			  </div>
 
-				<%= render partial: 'contact/form' %>
-			</div>
+			  <div class="col-md-5">
+			  	<div class='col-md-12'>
+			  		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+			  		Cras vitae enim enim. Sed nec dignissim purus. adsit
+			  	  elit irhum dolor siamet ihrmet siarum.</p>
+			  		<hr>
+			  	</div>
+
+			  	<br>
+			  	<div class='row'>
+				  	<div class="col-md-12">			  	 
+				  	 <div class='col-md-6' style="padding: 10px;">
+				  			<div class="media">
+				  				<div class="media-middle media-left">
+				  				</div>
+				  				<div class="media-body">
+				  					<h4 style='font-size: 17px;'><strong>SÃO PAULO</strong></h4>	
+				  					<p>05200 Arévalo 0034<br> 37483 2445 322<br> hello@company.com </p>
+				  					<%= button_to 'Ver no mapa', class: 'btn btn-primary top' %>
+				  				</div>
+				  			</div>
+				  		</div>
+
+			  	 		<div class='col-md-6' style="padding: 10px;">
+				  			<div class="media">
+				  				<div class="media-middle media-left">
+				  				</div>
+				  				<div class="media-body">
+				  					<h4 style='font-size: 17px;'><strong>PARANÁ</strong></h4>	
+				  					<p>05200 Arévalo 0034<br> 37483 2445 322<br> hello@company.com </p>
+				  					<%= button_to 'Ver no mapa', '', class: 'btn btn-primary top' %>
+				  				</div>
+				  			</div>
+				  		</div>
+
+			  	 		<div class='col-md-6' style="padding: 10px;">
+				  			<div class="media">
+				  				<div class="media-middle media-left">
+				  				</div>
+				  				<div class="media-body">
+				  					<h4 style='font-size: 17px;'><strong>SANTA CATARINA</strong></h4>	
+				  					<p>05200 Arévalo 0034<br> 37483 2445 322<br> hello@company.com </p>
+				  					<%= button_to 'Ver no mapa', '', class: 'btn btn-primary top' %>
+				  				</div>
+				  			</div>
+				  		</div>
+
+			  	 		<div class='col-md-6' style="padding: 10px;">
+				  			<div class="media">
+				  				<div class="media-middle media-left">
+				  				</div>
+				  				<div class="media-body">
+				  					<h4 style='font-size: 17px;'><strong>RIO GRANDE DO SUL</strong></h4>	
+				  					<p>05200 Arévalo 0034<br> 37483 2445 322<br> hello@company.com </p>
+				  					<%= button_to 'Ver no mapa', '', class: 'btn btn-primary top' %>
+				  				</div>
+				  			</div>
+				  		</div>
+			  		</div>
+
+			  </div>
+			</div>	
 		</div>
 	</div>
 </section>

@@ -1,24 +1,24 @@
+# frozen_string_literal: true
 class NewsletterMailer < ApplicationMailer
 
+  default from: 'marketing@code7even.com.br'
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
-  #
-  #   en.newsletter_mailer.subscrible.subject
-  #
-  def subscrible
-    @greeting = "Hi"
-
-    mail to: "to@example.org"
+  def subscrible(newsletter)
+    @newsletter = newsletter
+    mail({
+      to: newsletter.email,
+      subject: "#{newsletter.name}, você se inscreveu com sucesso em nossa newsletter."
+    })
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
-  #
-  #   en.newsletter_mailer.unsubscrible.subject
-  #
-  def unsubscrible
-    @greeting = "Hi"
-
-    mail to: "to@example.org"
+  # with the following lookup 
+  def unsubscrible(newsletter)
+    @newsletter = newsletter
+    mail({
+      to: newsletter.email,
+      subject: "#{newsletter.name}, Já vai? esperamos te-lo novamente por aqui."
+    })
   end
 end

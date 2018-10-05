@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module Dashboard
 	class UsersController < HomeController
 		before_action :set_user, only: [:show, :edit, :update, :destroy]
