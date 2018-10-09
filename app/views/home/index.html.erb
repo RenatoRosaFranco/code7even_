@@ -23,27 +23,73 @@
 	</div>
 </section>
 
-<section id='service'>
+<section id='service' class='jumbotron'>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
+				<ul class="list-unstyled text-center">
+					<li><h2>SERVIÇOS</h2></li>
+					<li><p>Acompanhe nossas soluções.</p></li>
+					<li><hr></li><br>
+				</ul>
 				
+				<div class='row'>
+					<% (1..9).each do |service| %>
+						<div class="col-md-4">
+							 <div class="media">
+							 		<div class="media-middle media-left">
+							 			<i class="glyphicon glyphicon-search"></i>
+							 		</div>
+							 		<div class="media-body">
+							 			<h4 class="media-heading">
+							 				<strong>SERVICE <%= service %></strong></h4>
+							 			<p>A simple service description created
+							 			for affot something new.</p>
+							 		</div>
+							 </div>
+						</div>
+					<% end %>				
+				</div>
 			</div>
 		</div>
 	</div>
 </section>
 
-<section id='blog'>
+<section id='blog' style="margin-bottom: 70px;">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
+				<ul class="list-unstyled text-center">
+					<li><h1>BLOG</h1></li>
+					<li><p>Acompanhe nossas postagens.</p></li>
+					<li><hr></li>
+				</ul>
 				
+				<div class='row'>
+				<% (1..3).each do |post| %>
+					<div class="col-md-4">
+						<div class="panel panel-default padding">
+							<div class="jumbotron"></div>
+							<ul class="list-unstyled text-center">
+								<li><h3>POST TITLE</h3></li>
+								<li><p>A simple hug post tile for
+								automation process to do something
+								like evil.</p></li>
+								<ul class="list-unstyled list-inline">
+									<li><%= link_to 'SEE MORE', '#', class: 'btn btn-primary btn-lg top' %></li>
+									<li><%= link_to 'SHARE', '#', class: 'btn btn-primary btn-lg top' %></li>
+								</ul>
+							</ul>
+						</div>
+					</div>
+				<% end %>
+				</div>
 			</div>
 		</div>
 	</div>
 </section>
 
-<section id="newsletter">
+<section id="newsletter" class='jumbotron'>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
@@ -69,8 +115,7 @@
 				</ul>
 			
 			  <div class='col-md-7' id="contactForm">
-			 	  <%= render partial: 'contact/form', 
-			 	  	locals: { contact: @contact } %>
+			 	  <%= render partial: 'contact/form', locals: { contact: @contact } %>
 			  </div>
 
 			  <div class="col-md-5">
@@ -90,7 +135,8 @@
 				  				</div>
 				  				<div class="media-body">
 				  					<h4 style='font-size: 17px;'><strong>SÃO PAULO</strong></h4>	
-				  					<p>05200 Arévalo 0034<br> 37483 2445 322<br> hello@company.com </p>
+				  					<p>05200 Arévalo 0034<br> 37483 2445 322<br> 
+				  				  <%= link_to 'contatosp@code7even.com.br', '#' %></p>
 				  					<%= button_to 'Ver no mapa', class: 'btn btn-primary top' %>
 				  				</div>
 				  			</div>
@@ -102,7 +148,8 @@
 				  				</div>
 				  				<div class="media-body">
 				  					<h4 style='font-size: 17px;'><strong>PARANÁ</strong></h4>	
-				  					<p>05200 Arévalo 0034<br> 37483 2445 322<br> hello@company.com </p>
+				  					<p>05200 Arévalo 0034<br> 37483 2445 322<br> 
+				  					<%= link_to 'contatopr@code7even.com.br', '#' %> </p>
 				  					<%= button_to 'Ver no mapa', '', class: 'btn btn-primary top' %>
 				  				</div>
 				  			</div>
@@ -114,7 +161,8 @@
 				  				</div>
 				  				<div class="media-body">
 				  					<h4 style='font-size: 17px;'><strong>SANTA CATARINA</strong></h4>	
-				  					<p>05200 Arévalo 0034<br> 37483 2445 322<br> hello@company.com </p>
+				  					<p>05200 Arévalo 0034<br> 37483 2445 322<br>
+				  					<%= link_to 'contatosc@code7even.com.br', '#' %></p>
 				  					<%= button_to 'Ver no mapa', '', class: 'btn btn-primary top' %>
 				  				</div>
 				  			</div>
@@ -125,14 +173,14 @@
 				  				<div class="media-middle media-left">
 				  				</div>
 				  				<div class="media-body">
-				  					<h4 style='font-size: 17px;'><strong>RIO GRANDE DO SUL</strong></h4>	
-				  					<p>05200 Arévalo 0034<br> 37483 2445 322<br> hello@company.com </p>
+				  					<h4 style='font-size: 17px;'><strong>RIO GRANDE SUL</strong></h4>	
+				  					<p>05200 Arévalo 0034<br> 37483 2445 322<br> 
+				  					<%= link_to 'contators@code7even.com.br', '#' %> </p>
 				  					<%= button_to 'Ver no mapa', '', class: 'btn btn-primary top' %>
 				  				</div>
 				  			</div>
 				  		</div>
 			  		</div>
-
 			  </div>
 			</div>	
 		</div>
